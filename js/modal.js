@@ -36,7 +36,7 @@ var modal = ( function () {
 		var m = document.getElementById( modalId );
 
 		if ( !m ) {
-			throw new Error( 'Modal #'+ modalId +' does\'nt appear to exist.' );
+			throw new Error( 'Modal #'+ modalId +' doesn\'t appear to exist.' );
 		}
 
 		var modalClassList = m.classList;
