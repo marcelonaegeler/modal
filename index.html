@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal</title>
+	<link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+	
+	<a href="#" class="modal-trigger" data-modal="modal-content">Open modal</a>
+	<a href="#" class="modal-trigger" data-modal="modal-infobox">Open info box</a>
+
+	<div style="height:600px;width:100px;background:#000"></div>
+
+	<script type="js-template" id="tpl-modal-content">
+		<div class="modal modal--center" id="modal-content">
+			<div class="modal-bg"></div>
+			<div class="modal-dialog modal-large">
+				<h1 style="text-align: center"> Esta é uma modal do <% nome %></h1>
+			</div>
+		</div>
+	</script>
+
+	<script type="js-template" id="tpl-modal-infobox">
+		<div class="modal modal--position" id="modal-infobox">
+			<div class="modal-bg"></div>
+			<div class="modal-dialog modal-small">
+				<h3 style="text-align: center"> Esta é um infobox do <% nome %></h3>
+				<a href="#" class="modal-trigger" data-modal="modal-infobox">Close infobox</a>
+			</div>
+		</div>
+	</script>
+
+	<script src="js/engine.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

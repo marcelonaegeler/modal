@@ -1,0 +1,63 @@
+.scrollbar-measure {
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+}
+.mode--overflow {
+	overflow: hidden;
+}
+
+.modal {
+	overflow-y: scroll;
+	visibility: hidden;
+	opacity: 0;
+
+	transition: opacity 100ms linear;
+}
+
+.modal-bg {
+	background-color: rgba( 0, 0, 0, 0.25 );
+}
+
+.modal, .modal-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.modal-dialog {
+  z-index: 2;
+  background-color: #FFF;
+}
+
+.modal-small {
+	width: 200px;
+	height: 200px;
+}
+
+.modal-large {
+	width: 500px;
+	height: 600px;
+}
+
+/*
+* States
+**/
+.modal.modal--in {
+	opacity: 1;
+	visibility: visible;
+}
+.modal.modal--animating {
+	visibility: visible;
+}
+.modal--center .modal-dialog {
+	position: relative;	
+	margin: 30px auto;
+}
+.modal--position .modal-dialog {
+	position: absolute;
+}
