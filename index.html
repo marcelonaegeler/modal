@@ -6,9 +6,13 @@
 	<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-	
+
 	<a href="#" class="modal-trigger" data-modal="modal-content">Open modal</a>
-	<a href="#" class="modal-trigger" data-modal="modal-infobox">Open info box</a>
+
+	<p style="margin-top: 50px">
+		<a href="#" class="modal-trigger-ajax" data-modal="modal-infobox" rel="1">Tatiana Wollinger</a>
+		<a href="#" class="modal-trigger-ajax" data-modal="modal-infobox" rel="2">Cleito Karloh</a>
+	</p>
 
 	<div style="height:600px;width:100px;background:#000"></div>
 
@@ -21,18 +25,11 @@
 		</div>
 	</script>
 
-	<script type="js-template" id="tpl-modal-infobox">
-		<div class="modal modal--position" id="modal-infobox">
-			<div class="modal-bg"></div>
-			<div class="modal-dialog modal-small">
-				<h3 style="text-align: center"> Esta é um infobox do <% nome %></h3>
-				<a href="#" class="modal-trigger" data-modal="modal-infobox">Close infobox</a>
-			</div>
-		</div>
-	</script>
-
 	<script src="js/engine.js"></script>
+	<script src="js/ajax.js"></script>
+	<script src="js/view.js"></script>
 	<script src="js/modal.js"></script>
+
 	<script src="js/script.js"></script>
 </body>
 </html>

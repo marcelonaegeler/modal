@@ -19,6 +19,18 @@ var modal = ( function () {
 		}
 	})();
 
+
+	// Get and set triggers
+	var setTriggers = function () {
+
+		var triggers = document.getElementsByClassName( 'modal-trigger' );
+		for ( var i = 0, l = triggers.length; i < l; i++ ) {
+			triggers[ i ].onclick = function () { trigger.apply( this ); };
+		}
+
+	};
+
+	// Verify if determined modal is open
 	var isOpen = function ( modalId ) {
 		return document.getElementById( modalId ).classList.contains( 'modal--in' );
 	};
@@ -46,6 +58,11 @@ var modal = ( function () {
 			modalClassList.add( 'modal--animating' );
 			modalClassList.remove( 'modal--in' );
 
+			var hasFocus = document.getElementsByClassName( 'modal--focus' );
+			if ( hasFocus.length ) {
+				hasFocus[ 0 ].classList.remove( 'modal--focus' );
+			}
+
 
 			setTimeout( function () {
 			
@@ -69,9 +86,11 @@ var modal = ( function () {
 
 			if ( modalClassList.contains( 'modal--position' ) ) {
 				var position = {
-					top: this.offsetTop - 10
-					, left: this.offsetLeft + this.offsetWidth + 5
+					top: this.offsetParent.offsetTop + this.offsetTop - document.body.scrollTop - 10
+					, left: this.offsetParent.offsetLeft + this.offsetLeft + this.offsetWidth + 15
 				};
+
+				this.parentNode.parentNode.classList.add( 'modal--focus' );
 
 				var s = document.createElement( 'style' );
 				s.id = 'stylesheet-'+ modalId;
@@ -82,9 +101,12 @@ var modal = ( function () {
 		}
 	};
 
+	setTriggers();
+
 	return {
 		trigger: trigger
 		, isOpen: isOpen
+		, setTriggers: setTriggers
 	};
 
 })();

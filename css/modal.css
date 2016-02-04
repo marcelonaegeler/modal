@@ -1,3 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+}
+
 .scrollbar-measure {
 	width: 100px;
 	height: 100px;
@@ -14,7 +23,7 @@
 	visibility: hidden;
 	opacity: 0;
 
-	transition: opacity 100ms linear;
+	transition: opacity 200ms linear;
 }
 
 .modal-bg {
@@ -61,3 +70,8 @@
 .modal--position .modal-dialog {
 	position: absolute;
 }
+
+
+/*
+* Modal theme
+**/

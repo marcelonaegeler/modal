@@ -1,0 +1,25 @@
+{
+	"name": "Tatiana Wollinger",
+	"category": "Sessão",
+	"id": 1,
+	"address": "Rua Araponguinhas, 69 - Bairro Araponguinhas, Timbó/SC",
+	"coords": {
+		"lat": -26.827926,
+		"lng": -49.295260
+	},
+	"phone": "(99) 9999-9999",
+	"email": "tati@smartmk.online",
+	"done": true,
+	"sells": [
+		{
+			"name": "Produto 01",
+			"price": "R$ 100,00",
+			"quantity": 2
+		},
+		{
+			"name": "Produto 02",
+			"price": "R$ 150,00",
+			"quantity": 3
+		}
+	]
+}
