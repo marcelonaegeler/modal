@@ -57,4 +57,17 @@
 
 	modal.setTriggers();
 
+
+	var showAlert = document.getElementsByClassName( 'show-alert' )[0];
+	showAlert.onclick = function () { 
+		boxes.alert( 'That\'s cool!' );
+	};
+
+	var showConfirm = document.getElementsByClassName( 'show-confirm' )[0];
+	showConfirm.onclick = function () { 
+		boxes.confirm( 'Are you sure of this?' );
+	};
+
+	
+
 })();
