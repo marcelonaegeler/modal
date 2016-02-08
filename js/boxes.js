@@ -72,7 +72,6 @@ var boxes = ( function () {
 		setBoxesTriggers();
 	};
 
-
 	var actions = {
 		close: close
 	};
