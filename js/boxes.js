@@ -20,12 +20,29 @@ var boxes = ( function () {
 			var t = a[ i ].dataset.action;
 			if ( actions[ t ] ) {
 				a[ i ].onclick = actions[ t ];
+			} else {
+				a[ i ].onclick = window[ t ];
 			}
 		}
 	};
 
 	var close = function () {
-		console.error( 'will close' );
+		animate();
+	};
+
+	var animate = function () {
+		var a = document.getElementById( 'boxes-custom' );
+		if ( a.classList.contains( 'alert--in' ) ) {
+			a.classList.add( 'alert--animating' );
+			a.classList.remove( 'alert--in' );
+			setTimeout( function () {
+				a.remove();
+			}, 200 );
+		} else {
+			setTimeout( function () {
+				a.classList.add( 'alert--in' );
+			}, 10 );
+		}
 	};
 
 	var alert = function ( s ) {
@@ -37,8 +54,24 @@ var boxes = ( function () {
 		var t = templateEngine( base_template, data );
 		document.body.appendChild( t );
 
+		animate();
 		setBoxesTriggers();
 	};
+
+	var confirm = function ( s ) {
+		var data = {
+			icon: ''
+			, text: s
+			, btns: '<button type="button" class="btn btn-primary boxes-action" data-action="actionYes">Yes</button><button type="button" class="btn btn-primary boxes-action" data-action="actionNo">No</button>'
+		};
+		var t = templateEngine( base_template, data );
+		document.body.appendChild( t );
+
+		animate();
+
+		setBoxesTriggers();
+	};
+
 
 	var actions = {
 		close: close
@@ -46,5 +79,6 @@ var boxes = ( function () {
 
 	return {
 		alert: alert
+		, confirm: confirm
 	};
 })();

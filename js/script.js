@@ -64,6 +64,15 @@
 	};
 
 	var showConfirm = document.getElementsByClassName( 'show-confirm' )[0];
+
+	window.actionYes = function () {
+		console.log( 'o k' );
+	};
+
+	window.actionNo = function () {
+		console.error( 'No' );
+	};
+
 	showConfirm.onclick = function () { 
 		boxes.confirm( 'Are you sure of this?' );
 	};

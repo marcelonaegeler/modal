@@ -75,3 +75,42 @@ body {
 /*
 * Modal theme
 **/
+
+
+
+
+/*
+* Boxes alert CSS
+**/
+.alert {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 200ms linear;
+}
+.alert-bg {
+	background-color: rgba( 0, 0, 0, 0.25 );
+}
+
+.alert, .alert-bg {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.alert-content {
+	position: relative;
+	z-index: 3;
+	width: 480px;
+	background-color: #FFF;
+}
+
+.alert.alert--in {
+	opacity: 1;
+	visibility: visible;
+}
+.alert.alert--animating {
+	visibility: visible;
+}
