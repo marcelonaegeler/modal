@@ -1,6 +1,8 @@
 var view = ( function () {
 	"use strict";
 
+	var base_url = document.body.dataset.url;
+
 	var tpls = {};
 
 	var getTemplate = function ( t, cb ) {
@@ -9,15 +11,17 @@ var view = ( function () {
 		}
 
 		ajax.request({
-			url: 'templates/'+ t +'.html'
+			url: [ base_url, 'templates', t +'.html' ].join( '/' )
 			, success: function ( h ) {
 				tpls[ t ] = h;
 				cb( tpls[ t ] );
 			}
 		});
+
 	};
 
 	return {
 		getTemplate: getTemplate
 	};
+
 })();
